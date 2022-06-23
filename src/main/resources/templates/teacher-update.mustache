@@ -1,0 +1,23 @@
+{{>layout/header}}
+<h1>강사 정보 수정</h1>
+<div class="col-md-12">
+    <div class="col-md-4">
+        <form>
+            <input type="hidden" id="stSeq" value="{{teacher.stSeq}}">
+            <div class="form-group">
+                <label for="stId">아이디</label>
+                <input type="text" class="form-control"
+                       id="stId" value="{{teacher.stId}}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="stTel">휴대폰</label>
+                <input type="text" class="form-control"
+                       id="stTel" value="{{teacher.stTel}}" >
+            </div>
+        </form>
+        <a href="/" role="button" class="btn btn-secondary">취소</a>
+        <button type="button" class="btn btn-primary" id="btn-update">수정 완료</button>
+        <button type="button" class="btn btn-danger" id="btn-delete">삭제</button>
+    </div>
+</div>
+{{>layout/footer}}

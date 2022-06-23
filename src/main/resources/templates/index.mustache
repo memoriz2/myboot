@@ -1,0 +1,43 @@
+{{>layout/header}}
+    <h1>myboot 게시판</h1>
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-6">
+                <a href="/teacher/save" role="button" class="btn btn-primary">
+                    강사등록
+                </a>
+                {{#userName}}
+                    Logged in as: <span id="user">{{userName}}</span>
+                <a href="/logout" class="btn btn-info active" role="button">Logout</a>
+                {{/userName}}
+                {{^userName}}
+                    <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">
+                        Google Login
+                    </a>
+                    <a href="/oauth2/authorization/naver" class="btn btn-success active" role="button">
+                        Naver Login
+                    </a>
+                {{/userName}}
+            </div>
+        </div>
+        <br>
+<!--        강사 목록 -->
+        <table class="table table-horizontal table-bordered">
+            <thead class="thead-strong">
+                <tr>
+                    <th>아이디</th>
+                    <th>휴대폰</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                {{#teacher}}
+                    <tr>
+                        <td><a href="/teacher/update/{{stSeq}}">{{stId}}</a></td>
+                        <td>{{stTel}}</td>
+                    </tr>
+                {{/teacher}}
+            </tbody>
+        </table>
+    </div>
+
+{{>layout/footer}}
